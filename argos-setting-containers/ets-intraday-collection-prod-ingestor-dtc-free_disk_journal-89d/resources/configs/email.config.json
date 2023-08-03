@@ -1,0 +1,16 @@
+{
+    "HOST": "relay.int.westgroup.com",
+    "PORT": 25,
+    "API_ENDPOINT": "http://permission",
+    "API_PORT": "3000",
+    "SENDER_EMAIL": "Time.Series.Testautomation.Group@thomsonreuters.com",
+    "SENDER_PASSWORD": "Fdit[ujvp^jmuj.0",
+    "RECIPIENT_EMAILS": [
+        "phanuwit.suriya@thomsonreuters.com",
+        "kittisak.sajjapongse@thomsonreuters.com",
+        "suttipong.thongbankor@thomsonreuters.com",
+        "jatuporn.inpanich@thomsonreuters.com"
+    ],
+    "MESSAGE_SUBJECT": "[ARGOS]: {name}",
+    "MESSAGE_BODY": "<html><body><h1>Anomaly Report</h1><pre style=\"font-size:18px\">Name        : {name}<br>Host        : {hostname} ({hostaddress})<br>Container ID: {container_id} {container_name}<br>Anomaly     : {start} to {end}<br>Endpoint    : {endpoint}<br>Metric      : {metric}<br></pre><br><table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><tr><td align=\"center\"><p style=\"color:red; font-weight:bold\">Not an anomaly, <a href=\"{uri}\">CLICK HERE</a> to unsubscribe.</p></td></tr></table><img src=\"cid:plot\" alt=\"anomaly-image\" style=\"width:75%; height:auto; display:block; margin:0\" border=\"0\" /></body></html>"
+}

@@ -1,0 +1,278 @@
+version: '3.4'
+
+x-environment:
+  &default-environment
+  HOSTNAME: ${HOSTNAME}
+  HOSTADDRESS: ${HOSTADDRESS}
+
+x-deploy:
+  &default-deploy
+  resources:
+    limits:
+      cpus: '1.00'
+      memory: 2G
+    reservations:
+      cpus: '0.25'
+      memory: 50M
+    restart_policy:
+      condition: any
+
+services:
+  permission:
+    image: bams-aws.refinitiv.com:5001/tsbkk-innovation/argos/argos-deploy:permission
+    container_name: argos-permission
+    restart: always
+    ports:
+      - "3000:3000"
+    
+  ets-interday-ingest-prod-hadoop_space-regions-total_usage-89d:
+    image: bams-aws.refinitiv.com:5001/tsbkk-innovation/argos/argos-deploy:argos-adf
+    container_name: ets-interday-ingest-prod-hadoop_space-regions-total_usage-89d
+    restart: always
+    depends_on:
+      - permission
+    volumes:
+      - /home/argos/Desktop/argos/argos-setting-containers/ets-interday-ingest-prod-hadoop_space-regions-total_usage-89d/resources:/argos-adf/resources
+    environment:
+      <<: *default-environment
+      DOCKERNAME: ets-interday-ingest-prod-hadoop_space-regions-total_usage-89d
+  
+  ets-intraday-collection-prod-ingestor-dtc-cpu-89d:
+    image: bams-aws.refinitiv.com:5001/tsbkk-innovation/argos/argos-deploy:argos-adf
+    container_name: ets-intraday-collection-prod-ingestor-dtc-cpu-89d
+    restart: always
+    depends_on:
+      - permission
+    volumes:
+      - /home/argos/Desktop/argos/argos-setting-containers/ets-intraday-collection-prod-ingestor-dtc-cpu-89d/resources:/argos-adf/resources
+    environment:
+      <<: *default-environment
+      DOCKERNAME: ets-intraday-collection-prod-ingestor-dtc-cpu-89d
+
+  ets-intraday-collection-prod-ingestor-dtc-free_disk_journal-89d:
+    image: bams-aws.refinitiv.com:5001/tsbkk-innovation/argos/argos-deploy:argos-adf
+    container_name: ets-intraday-collection-prod-ingestor-dtc-free_disk_journal-89d
+    restart: always
+    depends_on:
+      - permission
+    volumes:
+      - /home/argos/Desktop/argos/argos-setting-containers/ets-intraday-collection-prod-ingestor-dtc-free_disk_journal-89d/resources:/argos-adf/resources
+    environment:
+      <<: *default-environment
+      DOCKERNAME: ets-intraday-collection-prod-ingestor-dtc-free_disk_journal-89d
+
+  ets-intraday-collection-prod-ingestor-dtc-free_mem-89d:
+    image: bams-aws.refinitiv.com:5001/tsbkk-innovation/argos/argos-deploy:argos-adf
+    container_name: ets-intraday-collection-prod-ingestor-dtc-free_mem-89d
+    restart: always
+    depends_on:
+      - permission
+    volumes:
+      - /home/argos/Desktop/argos/argos-setting-containers/ets-intraday-collection-prod-ingestor-dtc-free_mem-89d/resources:/argos-adf/resources
+    environment:
+      <<: *default-environment
+      DOCKERNAME: ets-intraday-collection-prod-ingestor-dtc-free_mem-89d
+
+  ets-intraday-collection-prod-ingestor-hdc-cpu-89d:
+    image: bams-aws.refinitiv.com:5001/tsbkk-innovation/argos/argos-deploy:argos-adf
+    container_name: ets-intraday-collection-prod-ingestor-hdc-cpu-89d
+    restart: always
+    depends_on:
+      - permission
+    volumes:
+      - /home/argos/Desktop/argos/argos-setting-containers/ets-intraday-collection-prod-ingestor-hdc-cpu-89d/resources:/argos-adf/resources
+    environment:
+      <<: *default-environment
+      DOCKERNAME: ets-intraday-collection-prod-ingestor-hdc-cpu-89d
+
+  ets-intraday-collection-prod-ingestor-hdc-free_disk_journal-89d:
+    image: bams-aws.refinitiv.com:5001/tsbkk-innovation/argos/argos-deploy:argos-adf
+    container_name: ets-intraday-collection-prod-ingestor-hdc-free_disk_journal-89d
+    restart: always
+    depends_on:
+      - permission
+    volumes:
+      - /home/argos/Desktop/argos/argos-setting-containers/ets-intraday-collection-prod-ingestor-hdc-free_disk_journal-89d/resources:/argos-adf/resources
+    environment:
+      <<: *default-environment
+      DOCKERNAME: ets-intraday-collection-prod-ingestor-hdc-free_disk_journal-89d
+
+  ets-intraday-collection-prod-ingestor-hdc-free_mem-89d:
+    image: bams-aws.refinitiv.com:5001/tsbkk-innovation/argos/argos-deploy:argos-adf
+    container_name: ets-intraday-collection-prod-ingestor-hdc-free_mem-89d
+    restart: always
+    depends_on:
+      - permission
+    volumes:
+      - /home/argos/Desktop/argos/argos-setting-containers/ets-intraday-collection-prod-ingestor-hdc-free_mem-89d/resources:/argos-adf/resources
+    environment:
+      <<: *default-environment
+      DOCKERNAME: ets-intraday-collection-prod-ingestor-hdc-free_mem-89d
+  
+  ets-intraday-collection-prod-util-dtc-util-89d:
+    image: bams-aws.refinitiv.com:5001/tsbkk-innovation/argos/argos-deploy:argos-adf
+    container_name: ets-intraday-collection-prod-util-dtc-util-89d
+    restart: always
+    depends_on:
+      - permission
+    volumes:
+      - /home/argos/Desktop/argos/argos-setting-containers/ets-intraday-collection-prod-util-dtc-util-89d/resources:/argos-adf/resources
+    environment:
+      <<: *default-environment
+      DOCKERNAME: ets-intraday-collection-prod-util-dtc-util-89d
+
+  ets-intraday-collection-prod-util-hdc-util-89d:
+    image: bams-aws.refinitiv.com:5001/tsbkk-innovation/argos/argos-deploy:argos-adf
+    container_name: ets-intraday-collection-prod-util-hdc-util-89d
+    restart: always
+    depends_on:
+      - permission
+    volumes:
+      - /home/argos/Desktop/argos/argos-setting-containers/ets-intraday-collection-prod-util-hdc-util-89d/resources:/argos-adf/resources
+    environment:
+      <<: *default-environment
+      DOCKERNAME: ets-intraday-collection-prod-util-hdc-util-89d
+
+  ets-intraday-webservice-prod-cpu-dtc-cpu-30d:
+    image: bams-aws.refinitiv.com:5001/tsbkk-innovation/argos/argos-deploy:argos-adf
+    container_name: ets-intraday-webservice-prod-cpu-dtc-cpu-30d
+    restart: always
+    depends_on:
+      - permission
+    volumes:
+      - /home/argos/Desktop/argos/argos-setting-containers/ets-intraday-webservice-prod-cpu-dtc-cpu-30d/resources:/argos-adf/resources
+    environment:
+      <<: *default-environment
+      DOCKERNAME: ets-intraday-webservice-prod-cpu-dtc-cpu-30d
+
+  ets-intraday-webservice-prod-cpu-dtc-cpu-89d:
+    image: bams-aws.refinitiv.com:5001/tsbkk-innovation/argos/argos-deploy:argos-adf
+    container_name: ets-intraday-webservice-prod-cpu-dtc-cpu-89d
+    restart: always
+    depends_on:
+      - permission
+    volumes:
+      - /home/argos/Desktop/argos/argos-setting-containers/ets-intraday-webservice-prod-cpu-dtc-cpu-89d/resources:/argos-adf/resources
+    environment:
+      <<: *default-environment
+      DOCKERNAME: ets-intraday-webservice-prod-cpu-dtc-cpu-89d
+
+  ets-intraday-webservice-prod-cpu-dtc-cpu-179d:
+    image: bams-aws.refinitiv.com:5001/tsbkk-innovation/argos/argos-deploy:argos-adf
+    container_name: ets-intraday-webservice-prod-cpu-dtc-cpu-179d
+    restart: always
+    depends_on:
+      - permission
+    volumes:
+      - /home/argos/Desktop/argos/argos-setting-containers/ets-intraday-webservice-prod-cpu-dtc-cpu-179d/resources:/argos-adf/resources
+    environment:
+      <<: *default-environment
+      DOCKERNAME: ets-intraday-webservice-prod-cpu-dtc-cpu-179d
+
+  ets-intraday-webservice-prod-cpu-hdc-cpu-30d:
+    image: bams-aws.refinitiv.com:5001/tsbkk-innovation/argos/argos-deploy:argos-adf
+    container_name: ets-intraday-webservice-prod-cpu-hdc-cpu-30d
+    restart: always
+    depends_on:
+      - permission
+    volumes:
+      - /home/argos/Desktop/argos/argos-setting-containers/ets-intraday-webservice-prod-cpu-hdc-cpu-30d/resources:/argos-adf/resources
+    environment:
+      <<: *default-environment
+      DOCKERNAME: ets-intraday-webservice-prod-cpu-hdc-cpu-30d
+
+  ets-intraday-webservice-prod-cpu-hdc-cpu-89d:
+    image: bams-aws.refinitiv.com:5001/tsbkk-innovation/argos/argos-deploy:argos-adf
+    container_name: ets-intraday-webservice-prod-cpu-hdc-cpu-89d
+    restart: always
+    depends_on:
+      - permission
+    volumes:
+      - /home/argos/Desktop/argos/argos-setting-containers/ets-intraday-webservice-prod-cpu-hdc-cpu-89d/resources:/argos-adf/resources
+    environment:
+      <<: *default-environment
+      DOCKERNAME: ets-intraday-webservice-prod-cpu-hdc-cpu-89d
+
+  ets-intraday-webservice-prod-cpu-hdc-cpu-179d:
+    image: bams-aws.refinitiv.com:5001/tsbkk-innovation/argos/argos-deploy:argos-adf
+    container_name: ets-intraday-webservice-prod-cpu-hdc-cpu-179d
+    restart: always
+    depends_on:
+      - permission
+    volumes:
+      - /home/argos/Desktop/argos/argos-setting-containers/ets-intraday-webservice-prod-cpu-hdc-cpu-179d/resources:/argos-adf/resources
+    environment:
+      <<: *default-environment
+      DOCKERNAME: ets-intraday-webservice-prod-cpu-hdc-cpu-179d
+
+  ets-intraday-webservice-prod-memory-dtc-aapp_free_mem-30d:
+    image: bams-aws.refinitiv.com:5001/tsbkk-innovation/argos/argos-deploy:argos-adf
+    container_name: ets-intraday-webservice-prod-memory-dtc-aapp_free_mem-30d
+    restart: always
+    depends_on:
+      - permission
+    volumes:
+      - /home/argos/Desktop/argos/argos-setting-containers/ets-intraday-webservice-prod-memory-dtc-aapp_free_mem-30d/resources:/argos-adf/resources
+    environment:
+      <<: *default-environment
+      DOCKERNAME: ets-intraday-webservice-prod-memory-dtc-aapp_free_mem-30d
+
+  ets-intraday-webservice-prod-memory-dtc-aapp_free_mem-89d:
+    image: bams-aws.refinitiv.com:5001/tsbkk-innovation/argos/argos-deploy:argos-adf
+    container_name: ets-intraday-webservice-prod-memory-dtc-aapp_free_mem-89d
+    restart: always
+    depends_on:
+      - permission
+    volumes:
+      - /home/argos/Desktop/argos/argos-setting-containers/ets-intraday-webservice-prod-memory-dtc-aapp_free_mem-89d/resources:/argos-adf/resources
+    environment:
+      <<: *default-environment
+      DOCKERNAME: ets-intraday-webservice-prod-memory-dtc-aapp_free_mem-89d
+
+  ets-intraday-webservice-prod-memory-dtc-aapp_free_mem-179d:
+    image: bams-aws.refinitiv.com:5001/tsbkk-innovation/argos/argos-deploy:argos-adf
+    container_name: ets-intraday-webservice-prod-memory-dtc-aapp_free_mem-179d
+    restart: always
+    depends_on:
+      - permission
+    volumes:
+      - /home/argos/Desktop/argos/argos-setting-containers/ets-intraday-webservice-prod-memory-dtc-aapp_free_mem-179d/resources:/argos-adf/resources
+    environment:
+      <<: *default-environment
+      DOCKERNAME: ets-intraday-webservice-prod-memory-dtc-aapp_free_mem-179d
+  
+  ets-intraday-webservice-prod-memory-hdc-aapp_free_mem-30d:
+    image: bams-aws.refinitiv.com:5001/tsbkk-innovation/argos/argos-deploy:argos-adf
+    container_name: ets-intraday-webservice-prod-memory-hdc-aapp_free_mem-30d
+    restart: always
+    depends_on:
+      - permission
+    volumes:
+      - /home/argos/Desktop/argos/argos-setting-containers/ets-intraday-webservice-prod-memory-hdc-aapp_free_mem-30d/resources:/argos-adf/resources
+    environment:
+      <<: *default-environment
+      DOCKERNAME: ets-intraday-webservice-prod-memory-hdc-aapp_free_mem-30d
+
+  ets-intraday-webservice-prod-memory-hdc-aapp_free_mem-89d:
+    image: bams-aws.refinitiv.com:5001/tsbkk-innovation/argos/argos-deploy:argos-adf
+    container_name: ets-intraday-webservice-prod-memory-hdc-aapp_free_mem-89d
+    restart: always
+    depends_on:
+      - permission
+    volumes:
+      - /home/argos/Desktop/argos/argos-setting-containers/ets-intraday-webservice-prod-memory-hdc-aapp_free_mem-89d/resources:/argos-adf/resources
+    environment:
+      <<: *default-environment
+      DOCKERNAME: ets-intraday-webservice-prod-memory-hdc-aapp_free_mem-89d
+
+  ets-intraday-webservice-prod-memory-hdc-aapp_free_mem-179d:
+    image: bams-aws.refinitiv.com:5001/tsbkk-innovation/argos/argos-deploy:argos-adf
+    container_name: ets-intraday-webservice-prod-memory-hdc-aapp_free_mem-179d
+    restart: always
+    depends_on:
+      - permission
+    volumes:
+      - /home/argos/Desktop/argos/argos-setting-containers/ets-intraday-webservice-prod-memory-hdc-aapp_free_mem-179d/resources:/argos-adf/resources
+    environment:
+      <<: *default-environment
+      DOCKERNAME: ets-intraday-webservice-prod-memory-hdc-aapp_free_mem-179d

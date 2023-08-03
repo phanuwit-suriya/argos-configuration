@@ -1,0 +1,122 @@
+{
+    "ets-intraday-webservice-prod-cpu-hdc-cpu-c531dgrzpap01-179d": {
+        "endpoint": "https://compass.thomsonreuters.com/api/monitor/metrics/production/render",
+        "metric": "production.amers.b00717.tseleintra.tim-tsd-aapp.c531dgrzpap01.os.cpu.usage",
+        "unit": "percent",
+        "sample_size": 15465600,
+        "window_size": 777600,
+        "step_size": 3600,
+        "attempt": 2,
+        "alert_window_size": 86400,
+        "alert_threshold": 86400,
+        "interval": 10800
+    },
+    "ets-intraday-webservice-prod-cpu-hdc-cpu-c804yguzpap02-179d": {
+        "endpoint": "https://compass.thomsonreuters.com/api/monitor/metrics/production/render",
+        "metric": "production.amers.b00717.tseleintra.tim-tsd-aapp.c804yguzpap02.os.cpu.usage",
+        "unit": "percent",
+        "sample_size": 15465600,
+        "window_size": 777600,
+        "step_size": 3600,
+        "attempt": 2,
+        "alert_window_size": 86400,
+        "alert_threshold": 86400,
+        "interval": 10800
+    },
+    "ets-intraday-webservice-prod-cpu-hdc-cpu-c758bxyzpap03-179d": {
+        "endpoint": "https://compass.thomsonreuters.com/api/monitor/metrics/production/render",
+        "metric": "production.amers.b00717.tseleintra.tim-tsd-aapp.c758bxyzpap03.os.cpu.usage",
+        "unit": "percent",
+        "sample_size": 15465600,
+        "window_size": 777600,
+        "step_size": 3600,
+        "attempt": 2,
+        "alert_window_size": 86400,
+        "alert_threshold": 86400,
+        "interval": 10800
+    },
+    "ets-intraday-webservice-prod-cpu-hdc-cpu-c392xkazpap04-179d": {
+        "endpoint": "https://compass.thomsonreuters.com/api/monitor/metrics/production/render",
+        "metric": "production.amers.b00717.tseleintra.tim-tsd-aapp.c392xkazpap04.os.cpu.usage",
+        "unit": "percent",
+        "sample_size": 15465600,
+        "window_size": 777600,
+        "step_size": 3600,
+        "attempt": 2,
+        "alert_window_size": 86400,
+        "alert_threshold": 86400,
+        "interval": 10800
+    },
+    "ets-intraday-webservice-prod-cpu-hdc-cpu-c603fakzpap05-179d": {
+        "endpoint": "https://compass.thomsonreuters.com/api/monitor/metrics/production/render",
+        "metric": "production.amers.b00717.tseleintra.tim-tsd-aapp.c603fakzpap05.os.cpu.usage",
+        "unit": "percent",
+        "sample_size": 15465600,
+        "window_size": 777600,
+        "step_size": 3600,
+        "attempt": 2,
+        "alert_window_size": 86400,
+        "alert_threshold": 86400,
+        "interval": 10800
+    },
+    "ets-intraday-webservice-prod-cpu-hdc-cpu-c136cxxzpap06-179d": {
+        "endpoint": "https://compass.thomsonreuters.com/api/monitor/metrics/production/render",
+        "metric": "production.amers.b00717.tseleintra.tim-tsd-aapp.c136cxxzpap06.os.cpu.usage",
+        "unit": "percent",
+        "sample_size": 15465600,
+        "window_size": 777600,
+        "step_size": 3600,
+        "attempt": 2,
+        "alert_window_size": 86400,
+        "alert_threshold": 86400,
+        "interval": 10800
+    },
+    "ets-intraday-webservice-prod-cpu-hdc-cpu-c505cqyzpap07-179d": {
+        "endpoint": "https://compass.thomsonreuters.com/api/monitor/metrics/production/render",
+        "metric": "production.amers.b00717.tseleintra.tim-tsd-aapp.c505cqyzpap07.os.cpu.usage",
+        "unit": "percent",
+        "sample_size": 15465600,
+        "window_size": 777600,
+        "step_size": 3600,
+        "attempt": 2,
+        "alert_window_size": 86400,
+        "alert_threshold": 86400,
+        "interval": 10800
+    },
+    "ets-intraday-webservice-prod-cpu-hdc-cpu-c854vfyzpap08-179d": {
+        "endpoint": "https://compass.thomsonreuters.com/api/monitor/metrics/production/render",
+        "metric": "production.amers.b00717.tseleintra.tim-tsd-aapp.c854vfyzpap08.os.cpu.usage",
+        "unit": "percent",
+        "sample_size": 15465600,
+        "window_size": 777600,
+        "step_size": 3600,
+        "attempt": 2,
+        "alert_window_size": 86400,
+        "alert_threshold": 86400,
+        "interval": 10800
+    },
+    "ets-intraday-webservice-prod-cpu-hdc-cpu-c590rabzpap09-179d": {
+        "endpoint": "https://compass.thomsonreuters.com/api/monitor/metrics/production/render",
+        "metric": "production.amers.b00717.tseleintra.tim-tsd-aapp.c590rabzpap09.os.cpu.usage",
+        "unit": "percent",
+        "sample_size": 15465600,
+        "window_size": 777600,
+        "step_size": 3600,
+        "attempt": 2,
+        "alert_window_size": 86400,
+        "alert_threshold": 86400,
+        "interval": 10800
+    },
+    "ets-intraday-webservice-prod-cpu-hdc-cpu-c789fxmzpap10-179d": {
+        "endpoint": "https://compass.thomsonreuters.com/api/monitor/metrics/production/render",
+        "metric": "production.amers.b00717.tseleintra.tim-tsd-aapp.c789fxmzpap10.os.cpu.usage    ",
+        "unit": "percent",
+        "sample_size": 15465600,
+        "window_size": 777600,
+        "step_size": 3600,
+        "attempt": 2,
+        "alert_window_size": 86400,
+        "alert_threshold": 86400,
+        "interval": 10800
+    }
+}

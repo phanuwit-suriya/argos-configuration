@@ -1,0 +1,112 @@
+{
+    "type": "object",
+    "properties": {
+        "data": {
+            "type": "array",
+            "items": {
+                "type": "array",
+                "items": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                }
+            }
+        },
+        "step": {
+            "type": "integer"
+        },
+        "start": {
+            "type": "number"
+        },
+        "end": {
+            "type": "number"
+        },
+        "source": {
+            "type": "object",
+            "properties": {
+                "endpoint": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "metric": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                }
+            },
+            "required": [
+                "endpoint",
+                "metric"
+            ]
+        },
+        "anomalies": {
+            "anyOf": [
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "start": {
+                                "type": "number"
+                            },
+                            "end": {
+                                "type": "number"
+                            },
+                            "self_overlapping": {
+                                "anyOf": [
+                                    {
+                                        "type": "number",
+                                        "minimum": 0,
+                                        "maximum": 100
+                                    },
+                                    {
+                                        "type": "null"
+                                    }
+                                ]
+                            },
+                            "expected_overlapping": {
+                                "anyOf": [
+                                    {
+                                        "type": "number",
+                                        "minimum": 0,
+                                        "maximum": 100
+                                    },
+                                    {
+                                        "type": "null"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "null"
+                }
+            ]
+        }
+    },
+    "required": [
+        "data",
+        "step",
+        "start",
+        "end",
+        "source",
+        "anomalies"
+    ]
+}

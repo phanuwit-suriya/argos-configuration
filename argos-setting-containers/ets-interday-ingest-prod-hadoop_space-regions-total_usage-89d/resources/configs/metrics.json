@@ -1,0 +1,26 @@
+{
+    "ets-interday-ingest-prod-hadoop_space-regions-total_usage-c701wrczphw01-89d": {
+        "endpoint": "https://compass.thomsonreuters.com/api/monitor/metrics/production/render",
+        "metric": "production.amers.b00717.tseleinter.ets_ehw.c701wrczphw01.Hadoop.HDFS_Used.total",
+        "unit": "bytes",
+        "sample_size": 7689600,
+        "window_size": 432000,
+        "step_size": 3600,
+        "attempt": 2,
+        "alert_window_size": 86400,
+        "alert_threshold": 86400,
+        "interval": 10800
+    },
+    "ets-interday-ingest-prod-hadoop_space-regions-total_usage-c901srkdphw02-89d": {
+        "endpoint": "https://compass.thomsonreuters.com/api/monitor/metrics/production/render",
+        "metric": "production.emea.b00312.tseleinter.ets_ehw.c901srkdphw02.Hadoop.HDFS_Used.total",
+        "unit": "bytes",
+        "sample_size": 7689600,
+        "window_size": 432000,
+        "step_size": 3600,
+        "attempt": 2,
+        "alert_window_size": 86400,
+        "alert_threshold": 86400,
+        "interval": 10800
+    }
+}
